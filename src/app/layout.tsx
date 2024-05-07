@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AppProvider } from "@/components/context/AppContext";
 
 export const metadata: Metadata = {
   title: "CSquad Token Manager",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }
